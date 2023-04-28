@@ -24,18 +24,18 @@ export class CronometroComponent implements OnInit{
     setInterval(this.actualizarSegundo.bind(this), 1000);
   }
 
-  // en este metodo se ejecuta cada segundo y aumenta la variable de segundo en uno. 
+  // en este metodo se ejecuta cada segundo y aumenta la variable de segundo en uno
   private actualizarSegundo(): void{
     this.segundo++;
     // Si el valor de segundo es un múltiplo de 10 
     if (this.segundo % 10 === 0) {
-        //se emite un evento utilizando el método emititMultiplo10().
+        //se emite un evento utilizando el método emititMultiplo10()
       this.emititMultiplo10();
     }
   }
   // este metodo emite un evento utilizando la salida multiplo10
   private emititMultiplo10(): void{
-    //se emite el valor actual del segundo.
+    //se emite el valor actual del segundo
     this.multiplo10.emit(this.segundo);
   }
 
